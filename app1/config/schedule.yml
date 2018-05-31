@@ -1,0 +1,8 @@
+seeder_worker:
+  cron:  '*/2 * * * *'
+  class: 'SeederWorker'
+  queue: 'default'
+consumer_worker:
+  cron:  '*/5 * * * *'
+  class: 'ConsumerWorker'
+  queue: 'default'

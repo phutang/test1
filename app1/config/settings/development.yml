@@ -1,0 +1,6 @@
+redis:
+  url: redis://127.0.0.1:6379/0
+  size: 10
+sidekiq:
+  client_size: 1
+  server_size: 10
