@@ -5,6 +5,6 @@ class Seed < ApplicationRecord
 
   private
   def rand_label
-    self.label = "1-#{rand}"
+    self.label = "2-#{rand}"
   end
 end

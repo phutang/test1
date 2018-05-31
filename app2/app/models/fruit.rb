@@ -5,6 +5,6 @@ class Fruit < ApplicationRecord
 
   private
   def rand_name
-    self.name = "f-#{rand}"
+    self.name = "j-#{rand}"
   end
 end
