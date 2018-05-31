@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   end
 
   def report2
-    @seeds = get_data(Settings.api_url.app1)['data']
+    @seeds = get_data(Settings.api_url.app2)['data']
   end
 
   private
