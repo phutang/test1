@@ -2,6 +2,9 @@ require 'net/http'
 require 'json'
 
 class HomeController < ApplicationController
+  def index
+  end
+  
   def report1
     @seeds = get_data(Settings.api_url.app1)['data']
   end
