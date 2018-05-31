@@ -8,4 +8,11 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  namespace :api do
+    scope :v1 do
+
+      get 'recent_items', to: 'general#recent_items'
+
+    end
+  end
 end
