@@ -20,5 +20,8 @@ namespace :data do
       sql = "INSERT INTO fruits (name, seed_id, created_at, updated_at) VALUES #{values}"
       MainDb.connection.execute(sql)
     end
+
+    MainDb.connection.execute("SELECT setval('seeds_id_seq', (SELECT MAX(id) FROM seeds) + 1)")
+    MainDb.connection.execute("SELECT setval('fruits_id_seq', (SELECT MAX(id) FROM fruits) + 1)")
   end
 end
