@@ -4,3 +4,6 @@ redis:
 sidekiq:
   client_size: 1
   server_size: 10
+main_database:
+  url: 'postgres://localhost:5432/app_development'
+  

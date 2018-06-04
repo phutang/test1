@@ -4,3 +4,5 @@ redis:
 sidekiq:
   client_size: 1
   server_size: 10
+main_database:
+  url: <%= ENV['MAIN_DB_URL'] %>
