@@ -1,10 +1,11 @@
 class Seed < ApplicationRecord
-  before_create :rand_label
+  before_create :init_data
 
-  scope :available, -> { where(consumed: false) }
+  scope :available, -> { where(consumed: false, app_id: 1) }
 
   private
-  def rand_label
+  def init_data
     self.label = "1-#{rand}"
+    self.app_id = 1
   end
 end
