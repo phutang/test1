@@ -35,6 +35,7 @@ octopus:
   fully_replicated: false
   environments:
     - development
+    - production
   development:
     app1:
       adapter: postgresql
