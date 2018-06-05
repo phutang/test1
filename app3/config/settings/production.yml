@@ -1,3 +1,3 @@
 api_url:
-  app1: 'https://remitano-test1-app4.herokuapp.com/api/v1/recent_items.json'
-  app2: 'https://remitano-test1-app5.herokuapp.com/api/v1/recent_items.json'
+  app1: 'https://remitano-test1-app6.herokuapp.com/api/v1/recent_items.json'
+  app2: 'https://remitano-test1-app7.herokuapp.com/api/v1/recent_items.json'
