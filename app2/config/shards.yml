@@ -1,0 +1,12 @@
+octopus:
+  replicated: false
+  fully_replicated: false
+  environments:
+    - development
+  development:
+    app1:
+      adapter: postgresql
+      database: app1_development
+    app2:
+      adapter: postgresql
+      database: app2_development

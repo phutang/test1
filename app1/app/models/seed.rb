@@ -1,6 +1,7 @@
 class Seed < ApplicationRecord
   before_create :init_data
 
+  scope :ready, -> { where(consumed: false) }
   scope :available, -> { where(consumed: false, app_id: 1) }
   scope :current, -> { where(app_id: 1) }
 
