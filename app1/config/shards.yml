@@ -1,3 +1,35 @@
+<%
+require 'cgi'
+require 'uri'
+
+def attribute(name, value, force_string = false)
+  if value
+    value_string =
+      if force_string
+        '"' + value + '"'
+      else
+        value
+      end
+    "#{name}: #{value_string}"
+  else
+    ""
+  end
+end
+
+if Rails.env == 'production'
+  old_db_url = ENV['OLD_DB_URL']
+  config = {}
+  uri = URI.parse(old_db_url)
+  config['adapter'] = uri.scheme
+  config['adapter'] = "postgresql" if config['adapter'] == "postgres"
+  config['database'] = (uri.path || "").split("/")[1]
+  config['username'] = uri.user
+  config['password'] = uri.password
+  config['host'] = uri.host
+  config['port'] = uri.port
+end
+%>
+
 octopus:
   replicated: false
   fully_replicated: false
@@ -10,3 +42,13 @@ octopus:
     app2:
       adapter: postgresql
       database: app2_development
+<% if Rails.env == 'production' %>
+  production:
+    app1:
+      <%= attribute "adapter",  c['adapter'] %>
+      <%= attribute "database", c['database'] %>
+      <%= attribute "username", c['username'] %>
+      <%= attribute "password", c['password'], true %>
+      <%= attribute "host",     c['host'] %>
+      <%= attribute "port",     c['port'] %>
+<% end %>
