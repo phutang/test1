@@ -45,10 +45,10 @@ octopus:
 <% if Rails.env == 'production' %>
   production:
     app1:
-      <%= attribute "adapter",  c['adapter'] %>
-      <%= attribute "database", c['database'] %>
-      <%= attribute "username", c['username'] %>
-      <%= attribute "password", c['password'], true %>
-      <%= attribute "host",     c['host'] %>
-      <%= attribute "port",     c['port'] %>
+      <%= attribute "adapter",  config['adapter'] %>
+      <%= attribute "database", config['database'] %>
+      <%= attribute "username", config['username'] %>
+      <%= attribute "password", config['password'], true %>
+      <%= attribute "host",     config['host'] %>
+      <%= attribute "port",     config['port'] %>
 <% end %>
